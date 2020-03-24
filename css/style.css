@@ -1,6 +1,22 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Marvel&display=swap');
-*, body{
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap&subset=cyrillic,latin-ext');
+@import url('http://allfont.ru/allfont.css?fonts=capture-it');
+html::-webkit-scrollbar {
+	width: 30px;
+    height: 30px;
+}
+html::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background: linear-gradient(90deg,#201c29,#201c29 1px,#100e17 0,#100e17);
+}
+html::-webkit-scrollbar-thumb {
+	background: linear-gradient(180deg,#ff8a00,#e52e71);
+	border-radius: 30px;
+	outline: 1px solid slategrey;
+	box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+*, :after, :before{
 	margin: 0;
 	padding: 0;
 	-webkit-box-sizing: border-box;
@@ -13,7 +29,55 @@ ul{
 a{
 	text-decoration: none;
 }
-
+/* header */
+.header{
+	display: flex;
+	color: #fff;
+    font-family: 'Rubik', sans-serif;
+	background: #1e1e26;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.header .wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.header .wrapper .header-content{
+    display: flex;
+    align-items: center;
+}
+.header .wrapper .social-container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.header .wrapper .social-container img{
+    display: inline-block;
+    margin-left: 10px;
+	width: 3rem;
+	
+}
+.header .wrapper .social-container img {	
+	background: linear-gradient(180deg,#ff8a00,#e52e71);
+}
+.header .wrapper .social-container img:hover{
+    filter: hue-rotate(90deg);
+    transform: scale(1.5);
+    transition: 0.5s;
+}
+.header .wrapper a img{
+    width: 6rem;
+}
+.header .header-content p{
+    font-family: 'Capture it', arial;
+    font-size: 3em;
+	
+}
+/* main content*/
 .container{
 	width: 100%;
 	height: 100vh;
@@ -48,7 +112,7 @@ a{
 	transition: all ease 0.3s;
 }
 .box:hover .marvel{
-	box-shadow: 2px 10px 12px rgba(0, 0, 0, 0.5);
+	background: linear-gradient(45deg, #1e1e26, #a4152c );
 	transition: all ease 0.5s;
 }
 .logo{
@@ -81,16 +145,65 @@ a{
 	color: #fff;
 	font-weight: bold;
 	letter-spacing: 2px;
-	font-family: calibri;
 	text-transform: uppercase;
 	font-size: 25px;
 	padding: 5px;
-	background-color: red;
+	background: linear-gradient(45deg, #a4152c, #1e1e26);
 	margin-top: 5px;
 	font-family: 'Marvel', sans-serif;
 	border-radius: 0px 5px 5px 5px;
 }
+.footer{
+	font-family: 'Rubik', sans-serif;
+    background:#fff;
+    color: #fff;
+    font-weight: 400;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 14px;
+	background: #1e1e26;
+}
+.footer p{
+    display: inline-block;
+}
+.footer a{
+    text-decoration: none;
+    color: #e91e63;
+}
+
+.footer img{
+    width: 11px;
+    margin-right: 5px;
+}
+.footer-content{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
+}
+
 @media(max-width: 720px){
+	.header .wrapper .social-container{
+		flex-flow: row wrap;
+		justify-content: center;
+    }
+	.header .wrapper{
+		flex-direction: column;
+	}
+	.header .wrapper .header-content{
+        flex-direction: column;
+    }
+	.header .header-content p{
+        font-size: 2em;
+        margin-left: 0;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
 	.box{
 		width: 94%;
 		height: 500px;
